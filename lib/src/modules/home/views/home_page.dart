@@ -1,5 +1,5 @@
-
 import 'package:app_modular/src/shared/localization/translate_app.dart';
+import 'package:app_modular/src/shared/localization_extends.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -15,34 +15,34 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(TranslateApp(context).text("appBarTitleHome")),
+        title: Text("appBarTitleHome".localizacao(context)),
       ),
-      body:  Column(
+      body: Column(
         children: <Widget>[
           Column(
             children: [
               Padding(
-                  padding: const EdgeInsets.only(top: 250.0),
-                  child: Center(
+                padding: const EdgeInsets.only(top: 250.0),
+                child: Center(
+                  child: Text(
+                    TranslateApp(context).text("textHome"),
+                    style: const TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0),
+                child: Center(
+                  child: ElevatedButton(
+                    onPressed: () => Modular.to.navigate('/login'),
                     child: Text(
-                      TranslateApp(context).text("textHome"),
+                      TranslateApp(context).text("bottomLogin"),
                       style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
-              Padding(
-                  padding: const EdgeInsets.only(top: 50.0),
-                  child: Center(
-                    child: ElevatedButton(
-                      onPressed: () => Modular.to.navigate('/login'),
-                      child: Text(
-                        TranslateApp(context).text("bottomLogin"),
-                        style: const TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
               ),
             ],
           )
