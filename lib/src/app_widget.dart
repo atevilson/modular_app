@@ -1,11 +1,8 @@
-
-
 import 'package:app_modular/src/app_module.dart';
 import 'package:app_modular/src/shared/localization/localizations_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
 
 void main() {
   Modular.to.addListener(() {
@@ -24,11 +21,8 @@ class AppWidget extends StatelessWidget {
       title: 'App modular',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-          foregroundColor: Colors.white,
-          color: Colors.black
-        ),
+            foregroundColor: Colors.white, color: Colors.black),
         primaryColor: Colors.blue,
-
       ),
       supportedLocales: const [
         Locale("en", "US"),
@@ -46,10 +40,11 @@ class AppWidget extends StatelessWidget {
           return supportedLocales.first;
         }
         final locale = locales.first;
-        return supportedLocales.firstWhere((supportedLocale) => 
-        supportedLocale.languageCode == locale.languageCode && 
-        supportedLocale.countryCode == locale.countryCode, 
-        orElse: () => supportedLocales.first);
+        return supportedLocales.firstWhere(
+            (supportedLocale) =>
+                supportedLocale.languageCode == locale.languageCode &&
+                supportedLocale.countryCode == locale.countryCode,
+            orElse: () => supportedLocales.first);
       },
       routerConfig: Modular.routerConfig,
     );
