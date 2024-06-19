@@ -25,8 +25,8 @@ class AppWidget extends StatelessWidget {
         primaryColor: Colors.blue,
       ),
       supportedLocales: const [
-        Locale("en", "US"),
         Locale("pt", "BR"),
+        Locale("en", "US"),        
         Locale("es", "ES")
       ],
       localizationsDelegates: const [
@@ -35,16 +35,12 @@ class AppWidget extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      localeListResolutionCallback: (locales, supportedLocales) {
-        if (locales == null || locales.isEmpty) {
-          return supportedLocales.first;
-        }
-        final locale = locales.first;
-        return supportedLocales.firstWhere(
-            (supportedLocale) =>
-                supportedLocale.languageCode == locale.languageCode &&
-                supportedLocale.countryCode == locale.countryCode,
-            orElse: () => supportedLocales.first);
+      localeResolutionCallback: (locale, supportedLocale) {
+          return supportedLocale.firstWhere(
+            (e) => 
+                e.languageCode == locale?.languageCode &&
+                e.countryCode == locale?.countryCode, 
+            orElse: () => supportedLocale.first);
       },
       routerConfig: Modular.routerConfig,
     );
