@@ -1,15 +1,24 @@
+
 import 'package:app_modular/src/app_module.dart';
 import 'package:app_modular/src/shared/localization/localizations_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get_it/get_it.dart';
 
-void main() {
-  Modular.to.addListener(() {
-    debugPrint(Modular.to.path);
-  });
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await injectorDependence();
 
   runApp(ModularApp(module: AppModule(), child: const AppWidget()));
+}
+
+Future<void> injectorDependence() async {
+  Locale defaultLocale = const Locale("pt", "BR");
+  LocalizationsApp localizationsApp = LocalizationsApp(defaultLocale);
+  await localizationsApp.load();
+
+  GetIt.I.registerLazySingleton<LocalizationsApp>(() => localizationsApp);
 }
 
 class AppWidget extends StatelessWidget {
@@ -26,7 +35,7 @@ class AppWidget extends StatelessWidget {
       ),
       supportedLocales: const [
         Locale("pt", "BR"),
-        Locale("en", "US"),        
+        Locale("en", "US"),
         Locale("es", "ES")
       ],
       localizationsDelegates: const [
@@ -35,13 +44,6 @@ class AppWidget extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      localeResolutionCallback: (locale, supportedLocale) {
-          return supportedLocale.firstWhere(
-            (e) => 
-                e.languageCode == locale?.languageCode &&
-                e.countryCode == locale?.countryCode, 
-            orElse: () => supportedLocale.first);
-      },
       routerConfig: Modular.routerConfig,
     );
   }
