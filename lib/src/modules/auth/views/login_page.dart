@@ -1,6 +1,9 @@
-import 'package:app_modular/src/shared/localization_extends.dart';
+import 'package:app_modular/src/shared/localization/localizations_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get_it/get_it.dart';
+
+final LocalizationsApp locale = GetIt.I<LocalizationsApp>();
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -10,7 +13,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "appBarTitleLogin".locates(context),
+          locale.appBarTitleHome,
         ),
       ),
       body: Padding(
@@ -30,7 +33,7 @@ class LoginPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () => Modular.to.navigate('/product'),
                 child: Text(
-                  "bottomLogin".locates(context),
+                  locale.bottomLogin,
                   style: const TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),

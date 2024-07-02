@@ -1,7 +1,10 @@
-import 'package:app_modular/src/shared/localization/translate_app.dart';
-import 'package:app_modular/src/shared/localization_extends.dart';
+
+import 'package:app_modular/src/shared/localization/localizations_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get_it/get_it.dart';
+
+final LocalizationsApp locale = GetIt.I<LocalizationsApp>();
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
@@ -10,7 +13,7 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(TranslateApp(context).text("appBarTitleHome")),
+        title: Text(locale.appBarTitleHome),
       ),
       body: Column(
         children: [
@@ -18,7 +21,7 @@ class ProductPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 250.0),
               child: Text(
-                "appBarTitleProduct".locates(context),
+                locale.appBarTitleProduct,
                 style: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.bold),
               ),
@@ -30,7 +33,7 @@ class ProductPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () => Modular.to.navigate('/'),
                 child: Text(
-                  "bottonBack".locates(context),
+                  locale.bottonBack,
                   style: const TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),
