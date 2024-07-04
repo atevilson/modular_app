@@ -1,1 +1,1 @@
-export 'src/app_widget.dart';
+export './src/modules/commons_dependencies/app_widget.dart';
