@@ -9,6 +9,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  auth:
+    dependency: "direct main"
+    description:
+      path: "lib/src/modules/auth"
+      relative: true
+    source: path
+    version: "0.0.1"
   auto_injector:
     dependency: transitive
     description:
@@ -57,6 +64,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
+  commons_dependencies:
+    dependency: transitive
+    description:
+      path: "lib/src/modules/commons_dependencies"
+      relative: true
+    source: path
+    version: "0.0.1"
   crypto:
     dependency: transitive
     description:
@@ -124,7 +138,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_modular:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_modular
       sha256: bc17a1eb1da676b9111e59d27834fb6673bdea01aead12f0803a0847ff9d451c
@@ -149,6 +163,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.7.0"
+  home:
+    dependency: "direct main"
+    description:
+      path: "lib/src/modules/home"
+      relative: true
+    source: path
+    version: "0.0.1"
   intl:
     dependency: transitive
     description:
@@ -237,6 +258,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  product:
+    dependency: "direct main"
+    description:
+      path: "lib/src/modules/product"
+      relative: true
+    source: path
+    version: "0.0.1"
   provider:
     dependency: "direct main"
     description:
@@ -348,4 +376,4 @@ packages:
     version: "13.0.0"
 sdks:
   dart: ">=3.3.3 <4.0.0"
-  flutter: ">=1.16.0"
+  flutter: ">=1.17.0"
