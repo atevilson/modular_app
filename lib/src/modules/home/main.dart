@@ -1,0 +1,1 @@
+export 'lib/home_module.dart';

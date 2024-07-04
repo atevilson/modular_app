@@ -1,0 +1,6 @@
+{
+    "appBarTitleHome": "Panel",
+    "textTitulo": "Esta es una aplicación modular",
+    "textHome": "Todo el sistema flutter_modular surgió de estudios realizados en Angular (otro framework de Google) y adaptado al mundo Flutter. Por lo tanto, existen muchas similitudes entre flutter_modular y el sistema de inyección de dependencia y ruta angular.",
+    "bottomLogin": "Acesso"
+}
