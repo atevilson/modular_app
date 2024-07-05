@@ -1,16 +1,27 @@
-# app_modular
+# App modular com internacionalização
+   
+Este é um aplicativo simples onde pude testar e validar algumas abordagens para internacionalização e modularização de uma aplicação Flutter.
 
-A new Flutter project.
+## Como Executar a aplicação
 
-## Getting Started
+1. Clone o repositório para o seu ambiente local:
 
-This project is a starting point for a Flutter application.
+   ```bash
+   git clone https://github.com/atevilson/Modular_app.git
+   ```
 
-A few resources to get you started if this is your first Flutter project:
+# Estrutura do Projeto
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## O projeto está organizado da seguinte forma:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `lib/src`: Contém um diretório `bloc` para a regra de negócio e `modules` com os módulos da aplicação.
+- `AppWidget.dart`: class app, root do sistema.
+- `commons_dependencies`: módulo para compartilhar dependências em comum com o app.
+- `Home`: rota inicial do app.
+- `Auth`: rota de login.
+- `Product`: rota de produtos.
+
+### Autor
+---
+
+ <sub><b>Atevilson Freitas</b></sub></a> <a href="">🧑‍💻</a>
