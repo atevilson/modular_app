@@ -1,11 +1,8 @@
 
 import 'package:commons_dependencies/commons_dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'app_module.dart';
-
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

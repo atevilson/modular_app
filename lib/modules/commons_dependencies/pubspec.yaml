@@ -18,12 +18,7 @@ dependencies:
   flutter_modular: ^6.3.4
   get_it: ^7.7.0
   modular_core: ^3.3.3
-  home:
-    path: "../home"
-  auth:
-    path: "../auth"
-  product:
-    path: "../product"
+  bloc: ^8.1.4
 
 dev_dependencies:
   flutter_test:
