@@ -1,6 +1,8 @@
 
-import 'package:commons_dependencies/bloc/localization_event_bloc.dart';
-import 'package:commons_dependencies/bloc/localization_state_bloc.dart';
+import 'package:common/main.dart';
+
+import 'localization_event_bloc.dart';
+import 'localization_state_bloc.dart';
 import 'package:commons_dependencies/commons_dependencies.dart';
 import 'package:flutter/cupertino.dart';
 
