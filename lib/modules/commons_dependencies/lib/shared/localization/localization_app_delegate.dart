@@ -1,5 +1,3 @@
-import 'package:get_it/get_it.dart';
-
 import 'localizations_app.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +14,6 @@ class LocalizationAppDelegate extends LocalizationsDelegate<LocalizationsApp> {
   Future<LocalizationsApp> load(Locale locale) async {
     var localizations = LocalizationsApp(locale);
     await localizations.load();
-    GetIt.I.unregister<LocalizationsApp>();
-    GetIt.I.registerLazySingleton<LocalizationsApp>(() => localizations);
     return localizations;
   }
 
