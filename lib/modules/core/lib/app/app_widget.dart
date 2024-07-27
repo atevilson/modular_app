@@ -1,7 +1,7 @@
 
 import 'package:commons_dependencies/commons_dependencies.dart';
 import 'package:flutter/material.dart';
-
+import 'package:common/main.dart';
 import 'app_module.dart';
 
 void main() async {
