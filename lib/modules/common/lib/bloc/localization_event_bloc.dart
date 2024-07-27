@@ -1,5 +1,5 @@
 
-import 'package:equatable/equatable.dart';
+import 'package:commons_dependencies/commons_dependencies.dart';
 import 'package:flutter/material.dart';
 
 abstract class LocalizationEvent extends Equatable {
