@@ -31,7 +31,7 @@ class LocalizationsApp {
           localizationString[key] = value.toString();
         });
       } catch (e) {
-        print("caminho não localizado $path: $e");
+        throw("caminho não localizado $path: $e");
       }
     }
 
