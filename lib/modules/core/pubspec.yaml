@@ -26,6 +26,8 @@ dependencies:
     sdk: flutter
   commons_dependencies:
     path: ../commons_dependencies
+  common:
+    path: ../common
   home:
     path: "../home"
   auth:
