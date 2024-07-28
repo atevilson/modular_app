@@ -14,10 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  void _changeLanguage(Locale newLocale) {
-    bloc.add(ChangeLanguage(newLocale));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,6 +69,10 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  void _changeLanguage(Locale newLocale) async {
+    bloc.add(ChangeLanguage(newLocale));
   }
 
   void _onPressedLanguage() {
