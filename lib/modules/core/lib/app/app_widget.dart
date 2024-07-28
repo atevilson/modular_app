@@ -3,25 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:common/main.dart';
 import 'app_module.dart';
 
+final LocalizationBloc bloc = GetIt.I<LocalizationBloc>();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await injectorDependence();
 
-  runApp(ModularApp(module: AppModule(), child: AppWidget()));
-}
-
-Future<void> injectorDependence() async {
-  Locale defaultLocale = const Locale("pt", "BR");
-  LocalizationsApp localizationsApp = LocalizationsApp(defaultLocale);
-  await localizationsApp.load();
-
-  GetIt.I.registerLazySingleton<LocalizationsApp>(() => localizationsApp);
-  GetIt.I.registerLazySingleton<LocalizationBloc>(() => LocalizationBloc());
+  runApp(ModularApp(module: AppModule(), child: const AppWidget()));
 }
 
 class AppWidget extends StatelessWidget {
-  final LocalizationBloc bloc = GetIt.I<LocalizationBloc>();
-  AppWidget({super.key});
+  const AppWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +21,6 @@ class AppWidget extends StatelessWidget {
       create: (context) => bloc,
       child: BlocBuilder<LocalizationBloc, LocalizationState>(
         builder: (context, state) {
-
           return MaterialApp.router(
             title: 'App modular',
             theme: ThemeData(
