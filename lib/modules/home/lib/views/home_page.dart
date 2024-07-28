@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:common/main.dart';
 
 final LocalizationsApp locale = GetIt.I<LocalizationsApp>();
+final LocalizationBloc bloc = GetIt.I<LocalizationBloc>();
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,9 +14,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  void _changeLanguage(Locale newLocale) async {
-    await locale.load(newLocale);
-    setState(() {});
+  void _changeLanguage(Locale newLocale) {
+    bloc.add(ChangeLanguage(newLocale));
   }
 
   @override
