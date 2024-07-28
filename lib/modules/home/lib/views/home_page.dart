@@ -2,9 +2,9 @@
 import 'package:commons_dependencies/commons_dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:common/main.dart';
+import 'package:home/main.dart';
 
 final LocalizationsApp locale = GetIt.I<LocalizationsApp>();
-final LocalizationBloc bloc = GetIt.I<LocalizationBloc>();
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.language),
-            onPressed: _onPressedLanguage,
+            onPressed: () => onPressedLanguage(context),
           ),
         ],
       ),
@@ -68,39 +68,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-    );
-  }
-
-  void _changeLanguage(Locale newLocale) async {
-    bloc.add(ChangeLanguage(newLocale));
-  }
-
-  void _onPressedLanguage() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Selecione o idioma'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _languageOption('Português', const Locale('pt', 'BR')),
-              _languageOption('Inglês', const Locale('en', 'US')),
-              _languageOption('Espanhol', const Locale('es', 'ES')),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _languageOption(String language, Locale locale) {
-    return ListTile(
-      title: Text(language),
-      onTap: () {
-        Navigator.of(context).pop();
-        _changeLanguage(locale);
-      },
     );
   }
 }
